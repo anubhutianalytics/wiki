@@ -41,6 +41,49 @@ During active development, you can use pre-release tags:
 
 ---
 
+### How the Pre-release Cycle Works
+
+1. Start with the first pre-release:  
+   `1.0.0-alpha.1`
+2. As fixes or changes are added, increment the pre-release number:  
+   `1.0.0-alpha.2`, `1.0.0-alpha.3`, etc.
+3. When the project becomes feature-complete, switch to **beta**:  
+   `1.0.0-beta.1`
+4. Once testing stabilizes, release **RC (Release Candidate)** versions:  
+   `1.0.0-rc.1`, `1.0.0-rc.2`
+5. When fully tested and approved, release the stable build:  
+   `1.0.0`
+
+---
+
+### Handling Many Pre-releases
+
+Yes, you can technically have versions like `1.0.0-alpha.32` —  
+the `.32` simply means it’s the 32nd pre-release build of version `1.0.0`.
+
+However, it’s better to move through **phases** rather than having endless alphas:
+
+| Stage | Example | Purpose |
+|--------|----------|----------|
+| Alpha | `1.0.0-alpha.1` → `1.0.0-alpha.5` | Early internal testing |
+| Beta | `1.0.0-beta.1` → `1.0.0-beta.4` | Feature-complete, wider testing |
+| RC | `1.0.0-rc.1` → `1.0.0-rc.2` | Final validation before release |
+| Stable | `1.0.0` | Production-ready version |
+
+This keeps the version history clean and shows progress toward stability.
+
+---
+
+### After the Stable Release
+
+Once `1.0.0` is released:
+- A **bug fix** → `1.0.1`
+- A **new feature** → `1.1.0`
+- A **breaking change** → `2.0.0`
+
+Future development for the next version can start again as pre-releases:
+
+1.1.0-alpha.1 → 1.1.0-beta.1 → 1.1.0 → 1.1.1 → ...
 ## 🚀 4. Recommended Practices
 
 ✅ **Always bump versions before merging** into `main` or deploying.  
